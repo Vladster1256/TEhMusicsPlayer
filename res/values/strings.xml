@@ -8,5 +8,6 @@
     <string name="pauseButtonText">Pause</string>
     <string name="stopButtonText">Stop</string>
     <string name="watchVideo">Watch Video</string>
+    <string name="homeButtonText">Home</string>
 
 </resources>

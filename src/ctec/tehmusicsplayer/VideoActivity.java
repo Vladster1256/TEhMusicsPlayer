@@ -16,7 +16,7 @@ public class VideoActivity extends Activity
 
 	private VideoView myPlayer;
 	private Button returnButton;
-	private MediaController myvideoController;
+	private MediaController myVideoController;
 	private Uri videoLocation;
 	
 	@Override
@@ -25,11 +25,14 @@ public class VideoActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_video);
 		
-		myPlayer = (VideoView) findViewbyId(R.id.videoView);
-		returnButton = (Button) findViewById(R.id.videoView);
+		myPlayer = (VideoView) findViewById(R.id.videoView);
+		returnButton = (Button) findViewById(R.id.homeButton);
 		
-		videoLocation = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.party);
+		videoLocation = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.gobwah);
 		myVideoController = new MediaController(this);
+		//Prepare the video
+		setupMedia();
+		setupListeners();
 	}
 	private void setupMedia()
 	{
@@ -38,7 +41,7 @@ public class VideoActivity extends Activity
 	}
 	private void setupListeners()
 	{
-		returnButton.setOnClickListener(new view.OnClickListener()
+		returnButton.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View currentView)
